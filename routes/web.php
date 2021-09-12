@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Route :: <HTTPメソッド>('<アドレス>' , クロージャ)
+//              ↓アドレスは自分で設定する
+Route::get('/route/hello', function () {
+    return '<h1>Hello from Route!</h1>';
+});
+
+Route::get('/view/var' , function () {
+    return view('message.var', ['variable' => 'Hello from web.php']);
 });
