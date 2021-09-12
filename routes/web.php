@@ -19,6 +19,24 @@ Route::get('/route/hello', function () {
     return '<h1>Hello from Route!</h1>';
 });
 
-Route::get('/view/var' , function () {
-    return view('message.var', ['variable' => 'Hello from web.php']);
+Route::get('view/hello', function() {
+    return view('message.hallo');
+});
+
+
+Route::get('/view/var', function () {
+    $variable = 'Hello from web.php';
+    return view('message.var', ['variable' => $variable ]);
+});
+
+Route::get('/view/word/{msg}', function($msg) {
+    return view('message.word', ['msg' => $msg]);
+});
+
+Route::get('/view/word/{name}/{msg}', function($name,$msg) {
+    return view('message.word2', 
+    [
+        'name' => $name,
+        'msg' => $msg
+    ]);
 });

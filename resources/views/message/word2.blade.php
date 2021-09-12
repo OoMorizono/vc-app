@@ -7,6 +7,6 @@
     <title>VCApp</title>
 </head>
 <body>
-    <h1>{{ $variable }}</h1>
+    <h1>{{ $name }}さん､{{ $msg }}</h1>
 </body>
 </html>
